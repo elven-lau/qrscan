@@ -17,7 +17,7 @@ class _SavedQRcodeState extends State<SavedQRcode> {
       future: _getQrCodes(),
       builder: (BuildContext context, AsyncSnapshot<List<String>> snapshot) {
         if (snapshot.hasData) {
-          return Column(
+          return ListView(
             children: snapshot.data
                 .map(
                   (qr) => Container(
