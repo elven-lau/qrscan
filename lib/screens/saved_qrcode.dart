@@ -33,11 +33,11 @@ class _SavedQRcodeState extends State<SavedQRcode> {
                             Expanded(
                               child: Text(qr),
                             ),
-                            FlatButton(
+                            TextButton(
                               onPressed: () {
                                 Clipboard.setData(new ClipboardData(text: qr))
                                     .then((_) {
-                                  Scaffold.of(context).showSnackBar(
+                                  ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content: Text("Copied to clipboard"),
                                     ),
@@ -46,7 +46,7 @@ class _SavedQRcodeState extends State<SavedQRcode> {
                               },
                               child: Icon(FontAwesome.copy),
                             ),
-                            FlatButton(
+                            TextButton(
                               onPressed: () async {
                                 List<String> newQrCodes = snapshot.data;
                                 newQrCodes.remove(qr);
@@ -55,7 +55,9 @@ class _SavedQRcodeState extends State<SavedQRcode> {
                                 prefs.setStringList('qr', newQrCodes);
                                 setState(() {});
                               },
-                              padding: EdgeInsets.all(0.0),
+                              style: TextButton.styleFrom(
+                                padding: EdgeInsets.all(0.0),
+                              ),
                               child: Icon(FontAwesome.trash),
                             ),
                           ],

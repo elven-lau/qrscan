@@ -16,7 +16,7 @@ class _QRScanPageState extends State<QRScanPage> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          RaisedButton(
+          ElevatedButton(
             child: Text("Scan QR code"),
             onPressed: barcodeScanning,
           ),

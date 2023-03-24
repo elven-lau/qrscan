@@ -25,14 +25,14 @@ Future<T> showSaveDialog<T>(BuildContext context, String displayText) {
           ),
         ),
         actions: <Widget>[
-          FlatButton(
+          TextButton(
             child: Text('Save'),
             onPressed: () {
               saveQRCode();
               Navigator.of(context).pop();
             },
           ),
-          FlatButton(
+          TextButton(
             child: Text('Cancel'),
             onPressed: () {
               Navigator.of(context).pop();
